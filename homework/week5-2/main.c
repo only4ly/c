@@ -6,8 +6,8 @@
 // 注意，每个字的拼音之间有一个空格，但是最后的字后面没有空格。当遇到负数时，在输出的开头加上“fu”，如-2341输出为：
 // fu er san si yi
 
-void printNum(int num);
-void printfLastNumber(int num, int isPrintBlank);
+void printOneNumber(int num);
+void printNumber(int num, int isPrintBlank);
 int main(int argc, char const *argv[])
 {
   int num;
@@ -17,19 +17,19 @@ int main(int argc, char const *argv[])
     printf("fu ");
     num = -num;
   }
-  printfLastNumber(num, 0);
+  printNumber(num, 0);
 }
 
 // 面向过程编程
-void printfLastNumber(int num, int isPrintBlank)
+void printNumber(int num, int isPrintBlank)
 {
   int rest = num % 10;
   int temp = num / 10;
   if (temp > 0)
   {
-    printfLastNumber(temp, 1);
+    printNumber(temp, 1);
   }
-  printNum(rest);
+  printOneNumber(rest);
   if (isPrintBlank)
   {
     printf(" ");
@@ -40,7 +40,7 @@ void printfLastNumber(int num, int isPrintBlank)
   }
 }
 
-void printNum(int num)
+void printOneNumber(int num)
 {
   switch (num)
   {
