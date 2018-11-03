@@ -21,6 +21,7 @@ int main(int argc, char const *argv[])
 }
 
 // 面向过程编程
+// 递归
 void printNumber(int num, int isPrintBlank)
 {
   int rest = num % 10;
