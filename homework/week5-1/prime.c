@@ -12,7 +12,12 @@ int prime(int p)
 
   const int pSqrt = (int)sqrt(p);
 
-  for (int i = 2; i <= pSqrt; i++)
+  if (p % 2 == 0)
+  {
+    return 0;
+  }
+
+  for (int i = 3; i < pSqrt; i += 2)
   {
     if (p % i == 0)
     {
